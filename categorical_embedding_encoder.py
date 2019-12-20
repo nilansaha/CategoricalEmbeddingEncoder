@@ -92,12 +92,3 @@ class CategoricalEmbeddingEncoder():
         feature_frame : pandas dataframe consisting the categories with embeddings
         """
         return self.fit(X, y).transform(X)
-
-
-classification_df = pd.DataFrame({'X': [10,13,14,12,10,7,10], 'y': [0,1,1,0,1,1,1]})
-regression_df = pd.DataFrame({'X': [1,2,3,4,5], 'y': [1.2,3.4,5.6,6.1,4.1]})
-
-
-embedding_encoder = EmbeddingEncoder(classification = False)
-embedding_encoder.fit(classification_df['X'], classification_df['y'])
-print(embedding_encoder.transform(classification_df['X']))
