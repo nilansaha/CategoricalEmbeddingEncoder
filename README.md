@@ -36,5 +36,18 @@ encoder.fit(X,y)
 encoder.transform(X)
 ```
 
+#### Fitting and Transforming together
 
+```
+import pandas as pd
+from categorical_embedding_encoder import CategoricalEmbeddingEncoder
+
+df = pd.DataFrame({'feature':[1,2,3,1,2,1,2], 'target': [1,0,0,1,0,1,1]})
+
+X = df['feature']
+y = df['target']
+
+encoder = CategoricalEmbeddingEncoder(classification = True, feature_name = 'feature_A')
+encoder.fit_transform(X,y)
+```
 

@@ -91,4 +91,5 @@ class CategoricalEmbeddingEncoder():
         -------
         feature_frame : pandas dataframe consisting the categories with embeddings
         """
-        return self.fit(X, y).transform(X)
+        self.fit(X, y)
+        return self.transform(X)
